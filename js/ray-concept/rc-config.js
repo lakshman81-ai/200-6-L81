@@ -82,11 +82,13 @@ const _defaults = {
   // Two-pass helper: Pass 1 = ±X/±Y only (horizontal), tight diameter;
   // Pass 2 = all 6 axes, wider diameter (REDU gets extra-wide).
   // "Diameter" = perpendicular cylinder diameter; tolerance radius = diameter / 2.
-  sixAxP1Diameter:  6,      // mm — Pass 1 cylinder diameter (radius 3 mm); ±X, ±Y only
-  sixAxP1MaxDist:   20000,  // mm — Pass 1 max ray distance
-  sixAxP2Diameter:  25,     // mm — Pass 2 cylinder diameter (radius 12.5 mm); all 6 axes
-  sixAxP2DiamREDU:  100,    // mm — Pass 2 cylinder diameter for REDU source face (radius 50 mm)
-  sixAxP2MaxDist:   20000,  // mm — Pass 2 max ray distance
+  primaryRayRadius: 3,      // mm — Pass A (primary ray direction) radius
+  primaryRayMaxDist: 20000, // mm — Pass A max ray distance
+  sixAxP1Radius:    6,      // mm — Pass B (±X, ±Y) radius
+  sixAxP1MaxDist:   20000,  // mm — Pass B max ray distance
+  sixAxP2Radius:    25,     // mm — Pass C (all 6 axes) radius
+  sixAxP2RadiusREDU: 75,    // mm — Pass C radius for REDU source face
+  sixAxP2MaxDist:   20000,  // mm — Pass C max ray distance
 
   // ── Stage 3: Pass control ─────────────────────────────────────────────────
   passEnabled: { p0: true, p1: true, p2: true },
